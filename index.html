@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REA: Análisis de Sesgos en Salidas de IA (Enfoque DUA)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Desarmando la "Caja Negra": Sesgos en Algoritmos de IA</h1>
+        <p class="subtitle">Recurso Educativo Abierto con enfoque de Diseño Universal para el Aprendizaje (DUA)</p>
+        <p class="license">Licencia: <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</a></p>
+    </header>
+
+    <nav aria-label="Herramientas de accesibilidad y navegación" class="accessibility-controls">
+        <h2>Opciones de Accesibilidad (Principio DUA: Participación y Representación)</h2>
+        <button id="toggle-contrast" aria-pressed="false">Modo Alto Contraste</button>
+        <button id="increase-font">Aumentar Texto</button>
+        <button id="decrease-font">Disminuir Texto</button>
+    </nav>
+
+    <main id="main-content">
+        <!-- Principio 1 DUA: Múltiples formas de Representación -->
+        <section class="dua-card">
+            <h2>1. ¿Qué es un Sesgo en IA? Explicación Multimodal</h2>
+            
+            <article class="concept-block">
+                <h3>Texto estructurado</h3>
+                <p>Un sesgo en Inteligencia Artificial no ocurre por "magia" o intenciones humanas implícitas en el código, sino por un proceso estadístico determinista: **la calidad y la distribución de los datos de entrenamiento**.</p>
+                <p>Si entrenamos a una red neuronal con una muestra sesgada (desproporcionada o prejuiciosa), el algoritmo simplemente aprenderá y reproducirá ese patrón con alta precisión.</p>
+            </article>
+
+            <article class="concept-block">
+                <h3>Esquema Lógico (Flujo de Datos)</h3>
+                <div class="code-diagram" role="img" aria-label="Diagrama de flujo: Datos del mundo real con sesgos pasan al modelo de entrenamiento de IA, lo que genera una salida sesgada.">
+┌────────────────────────────────┐
+│   Datos del Mundo Real         │ (Muestra no representativa / estereotipos)
+└───────────────┬────────────────┘
+                │
+                ▼
+┌────────────────────────────────┐
+│   Modelo de IA (Algoritmo)    │ (Aprende relaciones estadísticas)
+└───────────────┬────────────────┘
+                │
+                ▼
+┌────────────────────────────────┐
+│   Salida Predictiva Sesgada    │ (Amplifica la desviación observada)
+└────────────────────────────────┘
+                </div>
+            </article>
+        </section>
+
+        <!-- Principio 2 DUA: Múltiples formas de Acción y Expresión (Simulador Interactivos / Caja Blanca) -->
+        <section class="dua-card">
+            <h2>2. Laboratorio Explorable: Simulador de Sesgo de Selección</h2>
+            <p>Ajusta el porcentaje de representación en el conjunto de datos de entrenamiento y observa cómo cambia el margen de error del modelo para cada grupo.</p>
+
+            <div class="simulator-container">
+                <div class="control-group">
+                    <label for="dataset-ratio">Distribución del Dataset (Grupo A vs. Grupo B):</label>
+                    <input type="range" id="dataset-ratio" min="10" max="90" value="80" step="5">
+                    <p>Grupo A: <strong id="val-a">80%</strong> | Grupo B: <strong id="val-b">20%</strong></p>
+                </div>
+
+                <button id="run-simulation" class="btn-primary">Ejecutar Entrenamiento y Prueba</button>
+
+                <div class="results-box" aria-live="polite">
+                    <h3>Resultados del Modelo (Precisión estimada)</h3>
+                    <p>Precisión en Grupo A (Mayoritorio): <span id="metric-a">--</span></p>
+                    <p>Precisión en Grupo B (Minoritario): <span id="metric-b">--</span></p>
+                    <p id="bias-alert" class="alert-box" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principio 3 DUA: Múltiples formas de Compromiso / Motivación -->
+        <section class="dua-card">
+            <h2>3. Guía de Auditoría para Estudiantes</h2>
+            <p>Preguntas clave para analizar cualquier salida generada por un modelo de lenguaje o de visión computacional:</p>
+            <ul class="checklist">
+                <li><input type="checkbox" id="check1"> <label for="check1"><strong>Origen del dataset:</strong> ¿Qué grupos o perspectivas están subrepresentados en la fuente de información?</label></li>
+                <li><input type="checkbox" id="check2"> <label for="check2"><strong>Correlaciones espurias:</strong> ¿El modelo asoció un atributo irrelevante a un resultado debido a frecuencias históricas?</label></li>
+                <li><input type="checkbox" id="check3"> <label for="check3"><strong>Mitigación en prompt:</strong> ¿Puedo ajustar el prompt especificando contexto técnico objetivo para reducir el sesgo de salida?</label></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Recurso Diseñado con enfoque DUA e Ingeniería Educativa. Licencia Libre CC BY 4.0.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

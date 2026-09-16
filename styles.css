@@ -1,0 +1,145 @@
+/* Estilos Base y Accesibilidad */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --border-color: #dee2e6;
+    --alert-color: #842029;
+    --alert-bg: #f8d7da;
+    --font-scale: 1rem;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: var(--font-scale);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0 1rem;
+}
+
+/* Modo Alto Contraste (Criterio DUA Accesibilidad) */
+body.high-contrast {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --card-bg: #121212;
+    --primary-color: #ffff00;
+    --primary-hover: #e6e600;
+    --border-color: #ffffff;
+    --alert-color: #ffffff;
+    --alert-bg: #b00020;
+}
+
+body.high-contrast a, 
+body.high-contrast button {
+    color: #ffff00;
+}
+
+/* Contenedor Principal */
+header, main, footer {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #555;
+}
+
+body.high-contrast .subtitle {
+    color: #ccc;
+}
+
+/* Accesibilidad Bar */
+.accessibility-controls {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.accessibility-controls button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Tarjetas DUA */
+.dua-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.code-diagram {
+    font-family: monospace;
+    white-space: pre;
+    background-color: rgba(0,0,0,0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+body.high-contrast .code-diagram {
+    background-color: #222;
+}
+
+/* Laboratorio Explorable */
+.simulator-container {
+    background-color: rgba(13, 110, 253, 0.03);
+    border: 1px dashed var(--primary-color);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.control-group {
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.high-contrast .btn-primary {
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.alert-box {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: var(--alert-bg);
+    color: var(--alert-color);
+    border-radius: 4px;
+}
+
+/* Listas */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    margin-bottom: 0.75rem;
+}
